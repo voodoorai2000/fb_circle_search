@@ -6,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Url</th>
+      <th>Created at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= page.name %></td>
         <td><%= link_to facebook_page_url(page), facebook_page_url(page) %></td>
+        <td><%= page.created_at %></td>
       </tr>
     <% end %>
   </tbody>
