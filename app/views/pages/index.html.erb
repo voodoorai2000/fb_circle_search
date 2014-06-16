@@ -1,5 +1,6 @@
 <h1>Listing pages</h1>
 
+<%= link_to 'Refresh', refresh_pages_url %>
 <table>
   <thead>
     <tr>
@@ -12,8 +13,8 @@
   <tbody>
     <% @pages.each do |page| %>
       <tr>
-        <td><%= page["name"] %></td>
-        <td><%= link_to facebook_page_url(page["id"]), facebook_page_url(page["id"]) %></td>
+        <td><%= page.name %></td>
+        <td><%= link_to facebook_page_url(page), facebook_page_url(page) %></td>
       </tr>
     <% end %>
   </tbody>

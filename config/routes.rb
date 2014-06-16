@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pages
+  resources :pages do
+    collection do
+      get 'refresh', to: 'pages#refresh'
+    end
+  end
 
   resources :groups
 

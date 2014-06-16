@@ -4,8 +4,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @graph = Koala::Facebook::API.new(Rails.application.secrets.facebook_user_token)
-    @pages = @graph.search("podemos", {type: "page"})
+    @pages = Page.all
   end
 
   # GET /pages/1
@@ -62,14 +61,29 @@ class PagesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page
-      @page = Page.find(params[:id])
+  def refresh
+    @graph = Koala::Facebook::API.new(Rails.application.secrets.facebook_user_token)
+
+    fb_pages = @graph.search('podemos', type: 'page')
+
+    fb_pages.each do |fb_page|
+      Page.find_or_create_by(fb_page_id: fb_page['id']) do |page|
+        page.name = fb_page['name']
+      end
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def page_params
-      params.require(:page).permit(:name, :fb_page_id)
-    end
+    redirect_to pages_url
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_page
+    @page = Page.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def page_params
+    params.require(:page).permit(:name, :fb_page_id)
+  end
 end
