@@ -29,6 +29,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :production do 
+  gem 'rails_12factor'
+end
+
 gem "koala", "~> 1.10.0rc"
 
 # Use ActiveModel has_secure_password
