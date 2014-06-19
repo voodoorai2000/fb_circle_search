@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.fresh
   end
 
   # GET /pages/1
@@ -75,6 +75,10 @@ class PagesController < ApplicationController
     end
 
     redirect_to pages_url
+  end
+
+  def revised
+    @pages = Page.revised
   end
 
   private

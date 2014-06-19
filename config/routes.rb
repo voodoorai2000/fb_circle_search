@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:index, :update] do
     collection do
       get 'refresh', to: 'pages#refresh'
+      get 'revised', to: 'pages#revised'
     end
   end
 
