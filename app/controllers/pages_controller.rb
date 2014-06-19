@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_filter :parse_facebook_cookies
 
   # GET /pages
   # GET /pages.json
@@ -62,7 +63,7 @@ class PagesController < ApplicationController
   end
 
   def refresh
-    @graph = Koala::Facebook::API.new(Rails.application.secrets.facebook_user_token)
+    @graph = Koala::Facebook::API.new(@access_token)
 
     fb_pages = @graph.search('podemos', type: 'page')
 
@@ -84,6 +85,14 @@ class PagesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def page_params
-    params.require(:page).permit(:name, :fb_page_id)
+    params.require(:page).permit(:revised)
   end
+
+  def parse_facebook_cookies
+    @access_token ||= Koala::Facebook::OAuth.new(Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_secret).get_app_access_token
+
+    # If you've setup a configuration file as shown above then you can just do
+    # @facebook_cookies ||= Koala::Facebook::OAuth.new.get_user_info_from_cookie(cookies)
+  end
+
 end
