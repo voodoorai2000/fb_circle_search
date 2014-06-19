@@ -1,0 +1,19 @@
+%h3.h3
+  Listing
+  %a.f5.right{href: refresh_pages_url}
+    %i.fa.fa-refresh.fa-2x
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Url
+      %th Created at
+      %th{colspan: "3"}
+  %tbody
+    - @pages.each do |page|
+      %tr
+        %td.p1= page.name
+        %td.p1= link_to facebook_page_url(page), facebook_page_url(page)
+        %td.p1= page.created_at
+        %td.p1= check_box_tag(page.name.downcase, value = "1", checked = false, class: 'js-circle-visited')
+= link_to 'New page', new_page_path
