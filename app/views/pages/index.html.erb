@@ -1,33 +1,8 @@
 <h1>Listing pages</h1>
 
 <%= link_to 'Refresh', refresh_pages_url %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Created at</th>
-      <th>Revised</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'Revised', revised_pages_url %>
 
-  <tbody>
-    <tr><td><h1>Nuevos</h1></td></tr>
-    <% @pages.fresh.each do |page| %>
-      <tr>
-        <td><%= link_to page.name, facebook_page_url(page) %></td>
-        <td style="width:150px;text-align:center"><%= time_ago_in_words(page.created_at) %></td>
-        <td style="text-align:center">
-        <%= form_for page, remote: true, method: :put do |f| %>
-          <%= f.check_box :revised %>
-        <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
+<%= render 'listing', {pages: @pages, title: "Nuevos"} %>
 
 <br>
-
-<%= link_to 'New page', new_page_path %>
