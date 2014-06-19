@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-jQuery.fn.ajaxSubmit = function() {
-    this.trigger('submit.rails');
-};

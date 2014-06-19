@@ -19,7 +19,7 @@
         <td style="width:150px;text-align:center"><%= time_ago_in_words(page.created_at) %></td>
         <td style="text-align:center">
         <%= form_for page, remote: true, method: :put do |f| %>
-          <%= f.check_box :revised, onchange: "$('#edit_page_#{page.id}').ajaxSubmit();" %>
+          <%= f.check_box :revised %>
         <% end %>
         </td>
       </tr>
