@@ -45,6 +45,7 @@ class PagesController < ApplicationController
       if @page.update(page_params)
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
+        format.js   { render text: '' }
       else
         format.html { render :edit }
         format.json { render json: @page.errors, status: :unprocessable_entity }

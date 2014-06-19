@@ -17,30 +17,15 @@
       <tr>
         <td><%= link_to page.name, facebook_page_url(page) %></td>
         <td style="width:150px;text-align:center"><%= time_ago_in_words(page.created_at) %></td>
-        <td style="text-align:center"><%= check_box_tag :revised, page.revised %></td>
+        <td style="text-align:center">
+        <%= form_for page, remote: true, method: :put do |f| %>
+          <%= f.check_box :revised, onchange: "$('#edit_page_#{page.id}').ajaxSubmit();" %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 
-  <tbody>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-    <tr><td> </td></tr>
-
-    <tr><td><h1>Revisados</h1></td></tr>
-    <% @pages.revised.each do |page| %>
-      <tr>
-        <td><%= link_to page.name, facebook_page_url(page) %></td>
-        <td style="width:150px;text-align:center"><%= time_ago_in_words(page.created_at) %></td>
-        <td style="text-align:center"><%= check_box_tag :revised, '', 1 %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
 
 <br>
