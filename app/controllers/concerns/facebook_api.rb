@@ -11,7 +11,14 @@ class FacebookApi
   end
 
   def fb_search
-    @circles = @graph.search('podemos', type: @kind)
+    @circles = []
+    radicals.each { |radical|
+      @circles += @graph.search(radical, type: @kind)
+   
+      ('a'..'z').to_a.each { |letters|
+        @circles += @graph.search("#{radical} #{letters}", type: @kind)
+      }
+    }
   end
 
   def store
@@ -21,6 +28,10 @@ class FacebookApi
         circle.kind = @kind
       end
     end
+  end
+
+  def radicals
+    ["podemos", "podem"]
   end
 
 end
