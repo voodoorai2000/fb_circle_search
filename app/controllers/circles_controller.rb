@@ -1,4 +1,5 @@
-require 'facebook_api'
+require 'facebook_api_group'
+require 'facebook_api_page'
 class CirclesController < ApplicationController  
   before_filter :authenticate, only: :search
 
@@ -11,7 +12,8 @@ class CirclesController < ApplicationController
   end
 
   def search
-    FacebookAPI.new(current_user).search
+    FacebookApiGroup.new(current_user).search
+    FacebookApiPage.new.search
     redirect_to circles_url
   end
 
