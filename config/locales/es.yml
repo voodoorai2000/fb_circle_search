@@ -1,4 +1,7 @@
 es:
+  text:
+    page:  'Página'
+    group: 'Grupo'
   date:
     abbr_day_names:
     - dom

@@ -17,7 +17,8 @@
           = link_to circle.name, facebook_circle_url(circle)
         %td
           Hace #{time_ago_in_words(circle.created_at)}
-        %td= circle.kind
+        %td
+          = t("text.#{circle.kind}")
         %td{style: "text-align:center"}
           = form_for circle, remote: true, method: :put do |f|
             = f.check_box :revised, {class: 'js-circle-visited'}
