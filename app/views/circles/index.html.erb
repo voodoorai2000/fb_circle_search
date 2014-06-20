@@ -1,0 +1,34 @@
+<h1>Círculos nuevos</h1>
+
+<%= link_to 'Buscar en Facebook',     search_circles_url %><br/>
+<%= link_to 'Ver círculos revisados', revised_circles_url %>
+
+<table style="padding-top:50px">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Tipo</th>
+      <th>Revisado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @circles.each do |circle| %>
+      <tr>
+        <td><%= link_to circle.name, facebook_circle_url(circle) %></td>
+        <td style="width:150px;text-align:center">
+          Hace <%= time_ago_in_words(circle.created_at) %>
+        </td>
+        <td><%= circle.kind %></td>
+        <td style="text-align:center">
+          <%= form_for circle, remote: true, method: :put do |f| %>
+            <%= f.check_box :revised %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

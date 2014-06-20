@@ -34,6 +34,7 @@ group :production do
 end
 
 gem "koala", "~> 1.10.0rc"
+gem 'omniauth-facebook'
 
 gem "autoprefixer-rails"
 gem 'haml', '~> 4.0.5'
