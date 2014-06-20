@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
   resources :pages, only: [:index, :update] do
     collection do
       get 'refresh', to: 'pages#refresh'
