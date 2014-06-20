@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_filter :authenticate
+
   def index
     @groups = Group.all
   end
@@ -17,4 +19,10 @@ class GroupsController < ApplicationController
     redirect_to groups_url
   end
 
+  private
+  def authenticate
+    unless current_user
+      redirect_to "/auth/facebook"
+    end
+  end
 end
