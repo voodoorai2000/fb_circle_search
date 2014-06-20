@@ -6,7 +6,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups
+  resources :groups, only: [:index, :update] do
+    collection do
+      get 'refresh', to: 'groups#refresh'
+      get 'revised', to: 'groups#revised'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
