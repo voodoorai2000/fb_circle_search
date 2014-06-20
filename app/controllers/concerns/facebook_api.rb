@@ -1,6 +1,6 @@
 class FacebookApi
 
-  def initialize
+  def initialize(params=nil)
     @circles = []
   end
 
