@@ -2,6 +2,7 @@ class FacebookApiPage < FacebookApi
   
   def initialize
     @kind = 'page'
+    super
   end
 
   def token

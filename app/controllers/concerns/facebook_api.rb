@@ -1,5 +1,9 @@
 class FacebookApi
 
+  def initialize
+    @circles = []
+  end
+
   def search
     fb_authenticate
     fb_search
@@ -11,14 +15,8 @@ class FacebookApi
   end
 
   def fb_search
-    @circles = []
-    radicals.each { |radical|
-      @circles += @graph.search(radical, type: @kind)
-   
-      ('a'..'z').to_a.each { |letters|
-        @circles += @graph.search("#{radical} #{letters}", type: @kind)
-      }
-    }
+    search_radical
+    search_letter_combination
   end
 
   def store
@@ -32,6 +30,20 @@ class FacebookApi
 
   def radicals
     ["podemos", "podem"]
+  end
+
+  def search_radical
+    radicals.each do |radical|
+      @circles += @graph.search(radical, type: @kind)
+    end
+  end
+
+  def search_letter_combination
+    radicals.each do |radical|
+      ('a'..'z').to_a.each do |letters|
+        @circles += @graph.search("#{@radical} #{letters}", type: @kind)
+      end
+    end
   end
 
 end
