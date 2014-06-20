@@ -1,27 +1,20 @@
 Rails.application.routes.draw do
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :pages, only: [:index, :update] do
+  resources :circles, only: [:index, :update] do
     collection do
-      get 'refresh', to: 'pages#refresh'
-      get 'revised', to: 'pages#revised'
+      get 'search',  to: 'circles#search'
+      get 'revised', to: 'circles#revised'
     end
   end
 
-  resources :groups, only: [:index, :update] do
-    collection do
-      get 'refresh', to: 'groups#refresh'
-      get 'revised', to: 'groups#revised'
-    end
-  end
+  root 'circles#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'pages#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
