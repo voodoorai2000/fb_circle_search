@@ -10,6 +10,26 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+@charset "UTF-8";
+
+@import "config";
+
+//*-----------------------------------------------
+//* Base (Normalize and Main) 
+//*-----------------------------------------------
+@import "base/manifest";
+
+//*-----------------------------------------------
+//* Toolkit, utilities and elements
+//*-----------------------------------------------
+@import "toolkit/manifest";
+
+//*-----------------------------------------------
+//* Layout, main, header, aside
+//*-----------------------------------------------
+@import "layout/manifest";
+
+

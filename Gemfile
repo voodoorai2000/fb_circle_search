@@ -36,6 +36,9 @@ end
 gem "koala", "~> 1.10.0rc"
 gem 'omniauth-facebook'
 
+gem "autoprefixer-rails"
+gem 'haml', '~> 4.0.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
