@@ -1,5 +1,6 @@
 require 'facebook_api_group'
 require 'facebook_api_page'
+require 'facebook_api_user'
 class CirclesController < ApplicationController  
   before_filter :authenticate, only: :search
 

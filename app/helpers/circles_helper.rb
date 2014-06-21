@@ -11,6 +11,10 @@ module CirclesHelper
     "#{facebook_url}/pages/anything/#{circle.fb_id}"
   end
 
+  def facebook_user_url(circle)
+    "#{facebook_url}/app_scoped_user_id/#{circle.fb_id}"
+  end
+
   def facebook_url
     "https://www.facebook.com"
   end
