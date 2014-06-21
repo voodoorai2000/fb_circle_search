@@ -1,6 +1,7 @@
 %table.table
   %thead
     %tr
+      %th Imagen
       %th Nombre
       %th Fecha
       %th Tipo
@@ -9,10 +10,14 @@
   %tbody
     - circles.each do |circle|
       %tr
-        %td= link_to circle.name, facebook_circle_url(circle)
+        %td
+          = image_tag circle.image_url, size: '200x100'
+        %td
+          = link_to circle.name, facebook_circle_url(circle)
         %td
           Hace #{time_ago_in_words(circle.created_at)}
-        %td= circle.kind
+        %td
+          = t("text.#{circle.kind}")
         %td
           = form_for circle, remote: true, method: :put do |f|
-            = f.check_box :revised
+            = f.check_box :revised, {class: 'js-circle-visited'}
