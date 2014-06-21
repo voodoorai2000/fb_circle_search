@@ -5,6 +5,7 @@
 %table.table
   %thead
     %tr
+      %th Imagen
       %th Nombre
       %th Fecha
       %th Tipo
@@ -13,6 +14,8 @@
   %tbody
     - @circles.each do |circle|
       %tr
+        %td
+          = image_tag circle.image_url, size: '200x100'
         %td
           = link_to circle.name, facebook_circle_url(circle)
         %td

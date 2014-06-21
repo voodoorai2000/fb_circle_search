@@ -14,16 +14,18 @@ class FacebookApi
     @graph = Koala::Facebook::API.new(token)
   end
 
-  def fb_search
+  def fb_search    
     search_radical
     search_letter_combination
   end
 
   def store
     @circles.each do |fb_circle|
+      
       Circle.find_or_create_by(fb_id: fb_circle['id']) do |circle|
-        circle.name = fb_circle['name']
-        circle.kind = @kind
+        circle.name      = fb_circle['name']
+        circle.image_url = image(fb_circle)
+        circle.kind      = @kind
       end
     end
   end
@@ -41,9 +43,14 @@ class FacebookApi
   def search_letter_combination
     radicals.each do |radical|
       ('a'..'z').to_a.each do |letters|
-        @circles += @graph.search("#{@radical} #{letters}", type: @kind)
+        @circles += @graph.search("#{radical} #{letters}", type: @kind)
       end
     end
+  end
+
+  def image(fb_circle)
+    pic_cover = @graph.fql_query("select pic_cover from group where gid=#{fb_circle['id']}") 
+    pic_cover.first["pic_cover"]["source"] if pic_cover.first["pic_cover"].present?
   end
 
 end
