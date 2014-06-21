@@ -1,3 +1,5 @@
-%h1 Círculos revisados (<%= @circles.count %>)
+%h1 
+  Círculos revisados 
+  = @circles.count
 = link_to 'Ver círculos nuevos', circles_url
 = render 'circles', { circles: @circles, title: "Revisados" }
