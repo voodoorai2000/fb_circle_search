@@ -28,6 +28,7 @@ class CirclesController < ApplicationController
       FacebookApiGroup.new(current_user).search("podemos #{name}")
       FacebookApiPage.new.search("podemos #{name}")
     end
+    redirect_to circles_url
   end
 
 
