@@ -1,7 +1,7 @@
 class FacebookApiPage < FacebookApi
   
   def initialize
-    @kind = 'page'
+    @kind  = 'page'
     @fb_id = 'page_id'
     super
   end
