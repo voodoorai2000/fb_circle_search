@@ -4,7 +4,8 @@ class FacebookApi
     @circles = []
   end
 
-  def search
+  def search(query="podemos")
+    @query = query
     fb_authenticate
     fb_search
     store
@@ -15,7 +16,7 @@ class FacebookApi
   end
 
   def fb_search    
-    @circles += @graph.search("podemos", type: @kind)
+    @circles += @graph.search(@query, type: @kind)
   end
 
   def store

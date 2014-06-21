@@ -22,6 +22,17 @@ class CirclesController < ApplicationController
     @circle.update(circle_params)
   end
 
+  def by_andrex
+    File.open("#{Rails.root}/lib/revised_circles.txt", "r") do |f|
+    f.each_line do |name|
+      FacebookApiGroup.new(current_user).search("podemos #{name}")
+      FacebookApiPage.new.search("podemos #{name}")
+    end
+  end
+
+
+  end
+
   private
     
   def circle_params

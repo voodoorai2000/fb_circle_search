@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :circles, only: [:index, :update] do
     collection do
-      get 'search',  to: 'circles#search'
-      get 'revised', to: 'circles#revised'
+      get 'search',    to: 'circles#search'
+      get 'revised',   to: 'circles#revised'
+      get 'by_andrex', to: 'circles#by_andrex'
     end
   end
 
