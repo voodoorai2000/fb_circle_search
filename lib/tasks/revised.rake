@@ -9,3 +9,7 @@ task :revised => :environment do
     end
   end
 end
+
+task :remove_unrelated => :environment do
+  Circle.where("lower(unaccent(name)) NOT LIKE ?", "%podem%").map(&:destroy)
+end
