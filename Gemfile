@@ -31,10 +31,6 @@ end
 
 group :production do 
   gem 'rails_12factor'
-  gem 'rack-cache'
-  gem 'dalli'
-  gem 'kgio'
-  gem "memcachier"
 end
 
 gem "koala", "~> 1.10.0rc"
