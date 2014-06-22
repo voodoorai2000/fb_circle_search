@@ -26,17 +26,15 @@ class CirclesController < ApplicationController
 
   def by_andrex
     File.open("#{Rails.root}/lib/revised_circles.txt", "r") do |f|
-    f.each_line do |name|
-      ["podemos", "podem"].each do |radical|
-        FacebookApiGroup.new(current_user).search("#{radical} #{name}")
-        FacebookApiPage.new.search("#{radical} #{name}")
-        FacebookApiUser.new(current_user).search("#{radical} #{name}")
+      f.each_line do |name|
+        ["podemos", "podem"].each do |radical|
+          FacebookApiGroup.new(current_user).search("#{radical} #{name}")
+          FacebookApiPage.new.search("#{radical} #{name}")
+          FacebookApiUser.new(current_user).search("#{radical} #{name}")
+        end
       end
     end
     redirect_to circles_url
-  end
-
-
   end
 
   private

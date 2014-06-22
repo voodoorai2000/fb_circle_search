@@ -3,7 +3,7 @@ class Circle < ActiveRecord::Base
 
   scope :recent,   -> { where revised: false }
   scope :revised,  -> { where revised: true  }
-  scope :groups,    -> { where kind: 'group'  }
+  scope :groups,   -> { where kind: 'group'  }
   scope :pages,    -> { where kind: 'page'   }
-  scope :users,     -> { where kind: 'user'   }
+  scope :users,    -> { where kind: 'user'   }
 end
