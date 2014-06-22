@@ -1,9 +1,11 @@
 class UnaccentPackage < ActiveRecord::Migration
   def up
-    execute "CREATE EXTENSION unaccent;"
+    #not compatible with sqlite3
+    #execute "CREATE EXTENSION unaccent;"
   end
 
   def down
-    execute "DROP EXTENSION unaccent;"
+    #not compatible with sqlite3
+    #execute "DROP EXTENSION unaccent;"
   end
 end
