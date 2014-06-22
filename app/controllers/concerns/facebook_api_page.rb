@@ -12,4 +12,8 @@ class FacebookApiPage < FacebookApi
     Koala::Facebook::OAuth.new(app_id, app_secret).get_app_access_token
   end
 
+  def posts_table
+    "posts"
+  end
+
 end

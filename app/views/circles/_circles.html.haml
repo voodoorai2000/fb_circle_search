@@ -15,7 +15,7 @@
         %td
           = link_to circle.name, facebook_circle_url(circle)
         %td
-          Hace #{time_ago_in_words(circle.created_at)}
+          = circle.constituted_at ? "Hace #{time_ago_in_words(circle.constituted_at)}" : "Desconocido"
         %td
           = t("text.#{circle.kind}")
         %td

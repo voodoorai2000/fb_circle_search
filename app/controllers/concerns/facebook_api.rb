@@ -22,9 +22,10 @@ class FacebookApi
   def store
     @circles.each do |fb_circle|
       Circle.find_or_create_by(fb_id: fb_circle['id']) do |circle|
-        circle.name      = fb_circle['name']
-        circle.image_url = image(fb_circle)
-        circle.kind      = @kind
+        circle.name       = fb_circle['name']
+        circle.image_url  = image(fb_circle)
+        circle.constituted_at = constituted_at(fb_circle)
+        circle.kind       = @kind
       end
     end
   end
@@ -32,6 +33,16 @@ class FacebookApi
   def image(fb_circle)
     pic_cover = @graph.fql_query("select pic_cover from #{@kind} where #{@fb_id}=#{fb_circle['id']}") 
     pic_cover.first["pic_cover"]["source"] if pic_cover.first["pic_cover"].present?
+  end
+
+  def constituted_at(fb_circle)
+    return if @kind == 'user'
+    @posts = @graph.get_connection(fb_circle['id'], posts_table, {:limit => 100})
+    until @posts.blank?
+     @last_post = @posts.last
+     @posts = @posts.next_page
+    end
+    @last_post["created_time"] if @last_post.present? #Some groups dont have posts
   end
 
 end

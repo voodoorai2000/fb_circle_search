@@ -11,4 +11,8 @@ class FacebookApiGroup < FacebookApi
     @current_user.oauth_token
   end
 
+  def posts_table
+    "feed"
+  end
+
 end
