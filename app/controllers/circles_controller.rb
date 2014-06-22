@@ -15,6 +15,7 @@ class CirclesController < ApplicationController
   def search
     FacebookApiGroup.new(current_user).search
     FacebookApiPage.new.search
+    FacebookApiUser.new(current_user).search
     redirect_to circles_url
   end
 
