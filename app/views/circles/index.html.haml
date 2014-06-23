@@ -1,8 +1,6 @@
-%h1 
-  Círculos nuevos 
-  = @circles.count
-
-= link_to 'Buscar en Facebook',     search_circles_url
-%br/
-= link_to 'Ver círculos revisados', revised_circles_url
+.row.mt2
+  %h2
+    Círculos nuevos
+    %small.status-info 
+      = @circles.count
 = render 'circles', { circles: @circles, title: "Revisados" }

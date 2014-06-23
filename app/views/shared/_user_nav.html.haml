@@ -1,0 +1,13 @@
+.user-nav.col-2-3
+  = link_to 'Ver círculos revisados', revised_circles_url
+  = link_to 'Ver círculos nuevos', circles_url
+  = link_to 'Buscar en Facebook', search_circles_url, class: "zeta right"
+
+.user-loggin.right
+  - if current_user
+    Signed in as
+    = succeed "!" do
+      %strong= current_user.name
+    = link_to "Sign out", signout_path, id: "sign_out"
+  - else
+    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"

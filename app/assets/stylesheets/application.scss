@@ -23,6 +23,11 @@
 @import "base/manifest";
 
 //*-----------------------------------------------
+//* Mixins and placeholders
+//*-----------------------------------------------
+@import "mixins/manifest";
+
+//*-----------------------------------------------
 //* Toolkit, utilities and elements
 //*-----------------------------------------------
 @import "toolkit/manifest";
