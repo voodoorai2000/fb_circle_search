@@ -2,6 +2,7 @@
   %h2 
     Círculos revisados 
     %small.status-success
+      %i.fa.fa-check-square-o
       = @circles.count
   = render 'circles', { circles: @circles, title: "Revisados" }
 

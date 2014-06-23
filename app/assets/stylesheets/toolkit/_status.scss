@@ -4,8 +4,8 @@
 	opacity: .2;
 }
 .status-success{
-	color: $green;
+	color: darken($green, 20%);
 }
 .status-info{
-	color: $light-green
+	color: grey
 }

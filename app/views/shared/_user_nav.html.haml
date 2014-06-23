@@ -1,8 +1,13 @@
-.user-nav.col-2-3
-  = link_to 'Ver círculos revisados', revised_circles_url
-  = link_to 'Ver círculos nuevos', circles_url
-  = link_to 'Buscar en Facebook', search_circles_url, class: "zeta right"
-
+.user-nav.col-3-4
+  %a{href: revised_circles_url}
+    %i.fa.fa-check-square-o
+    Ver círculos revisados
+  %a{href: circles_url}
+    %i.fa.fa-child
+    Ver círculos nuevos
+  %a.right{href: search_circles_url}
+    %i.fa.fa-search
+    Buscar en Facebook
 .user-loggin.right
   - if current_user
     Signed in as

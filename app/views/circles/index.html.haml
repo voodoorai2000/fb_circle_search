@@ -1,6 +1,7 @@
 .row.mt2
   %h2
     Círculos nuevos
-    %small.status-info 
+    %small.status-info
+      %i.fa.fa-child 
       = @circles.count
 = render 'circles', { circles: @circles, title: "Revisados" }
