@@ -18,6 +18,12 @@ $container-max-width: 45em;
         @viewport { width: device-width; zoom: 1.0; }
 
 
+*{
+    box-sizing: border-box;
+    &:after,&:before{
+        box-sizing: border-box;
+    }
+}
 
 /*  Sets Body Width */
 .container {

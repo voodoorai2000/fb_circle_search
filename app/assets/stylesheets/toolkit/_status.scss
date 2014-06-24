@@ -3,3 +3,9 @@
 .status-visited{
 	opacity: .2;
 }
+.status-success{
+	color: darken($green, 20%);
+}
+.status-info{
+	color: grey
+}
