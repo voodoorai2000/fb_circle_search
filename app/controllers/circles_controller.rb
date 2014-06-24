@@ -1,6 +1,4 @@
 class CirclesController < ApplicationController
-  before_filter :authenticate, only: :search
-
   def index
     @circles = Circle.recent
   end
