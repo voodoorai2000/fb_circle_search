@@ -39,6 +39,8 @@ gem 'omniauth-facebook'
 gem 'autoprefixer-rails'
 gem 'haml', '~> 4.0.5'
 
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
