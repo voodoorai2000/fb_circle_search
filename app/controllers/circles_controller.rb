@@ -15,7 +15,6 @@ class CirclesController < ApplicationController
   def search
     FacebookApiGroup.new(current_user).search
     FacebookApiPage.new.search
-    FacebookApiUser.new(current_user).search
     redirect_to circles_url
   end
 
@@ -30,7 +29,6 @@ class CirclesController < ApplicationController
         ["podemos", "podem"].each do |radical|
           FacebookApiGroup.new(current_user).search("#{radical} #{name}")
           FacebookApiPage.new.search("#{radical} #{name}")
-          FacebookApiUser.new(current_user).search("#{radical} #{name}")
         end
       end
     end
