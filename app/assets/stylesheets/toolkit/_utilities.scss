@@ -8,6 +8,8 @@
 .left  { float: left; }
 .right { float: right; }
 
+.txt-center  { text-align: center !important;}
+
 .clearfix {
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
