@@ -36,11 +36,12 @@ class FacebookApi
   end
 
   def constituted_at(fb_circle)
-    return if @kind == 'user'
     @posts = @graph.get_connection(fb_circle['id'], posts_table, {:limit => 100})
     until @posts.blank?
      @last_post = @posts.last
      @posts = @posts.next_page
+puts "LATTEST POST #{@last_post}"
+puts "next_post"     
     end
     @last_post["created_time"] if @last_post.present? #Some groups dont have posts
   end
