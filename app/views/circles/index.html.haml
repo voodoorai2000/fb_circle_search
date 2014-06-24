@@ -5,3 +5,4 @@
       %i.fa.fa-child 
       = @circles.count
 = render 'circles', { circles: @circles, title: "Revisados" }
+= paginate @circles
