@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'pg'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
 group :development do
   gem 'spring'
   gem 'sqlite3'
