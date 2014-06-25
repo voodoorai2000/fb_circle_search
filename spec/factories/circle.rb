@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :circle do
-    name Faker::Company.name
-    kind %w(group page user).sample
-
+    name          Faker::Company.name
+    kind          %w(group page user).sample
+    constituted_at Date.today
+    
     trait :recent do
       revised false
     end

@@ -3,10 +3,10 @@ require 'rails_helper'
 describe Circle do
   context 'listings' do
     it 'ordered by constituted_at' do
-      first_circle = create(:circle)
-      create_list(:circle, 5)
+      first_circle  = create(:circle, constituted_at: Date.today)
+      second_circle = create(:circle, constituted_at: 1.day.ago)
 
-      expect(Circle.all.first).to eq(first_circle)
+      expect(Circle.first).to eq(first_circle)
     end
 
     it 'by recent (or not revised)' do
