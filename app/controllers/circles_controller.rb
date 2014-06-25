@@ -1,6 +1,4 @@
-class CirclesController < ApplicationController  
-  before_filter :authenticate, only: :search
-
+class CirclesController < ApplicationController
   def index
     @circles = Circle.recent
   end
@@ -15,7 +13,7 @@ class CirclesController < ApplicationController
   end
 
   private
-    
+
   def circle_params
     params.require(:circle).permit(:revised)
   end

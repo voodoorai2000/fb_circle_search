@@ -18,6 +18,6 @@
           = circle.constituted_at ? "Hace #{time_ago_in_words(circle.constituted_at)}" : "Desconocido"
         %td
           = t("text.#{circle.kind}")
-        %td
+        %td.txt-center 
           = form_for circle, remote: true, method: :put do |f|
             = f.check_box :revised, {class: 'js-circle-visited'}

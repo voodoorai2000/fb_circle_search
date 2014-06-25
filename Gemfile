@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 
@@ -15,7 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster.
+# Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -25,18 +25,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'pg'
 
 group :development do
-  gem 'spring'  
+  gem 'spring'
   gem 'sqlite3'
 end
 
-group :production do 
+group :production do
   gem 'rails_12factor'
 end
 
-gem "koala", "~> 1.10.0rc"
+gem 'koala', '~> 1.10.0rc'
 gem 'omniauth-facebook'
 
-gem "autoprefixer-rails"
+gem 'autoprefixer-rails'
 gem 'haml', '~> 4.0.5'
 
 # Use ActiveModel has_secure_password
@@ -50,4 +50,3 @@ gem 'haml', '~> 4.0.5'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
