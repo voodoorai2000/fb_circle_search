@@ -1,10 +1,10 @@
 class CirclesController < ApplicationController
   def index
-    @circles = Circle.recent
+    @circles = Circle.recent.page(params[:page])
   end
 
   def revised
-    @circles = Circle.revised
+    @circles = Circle.revised.page(params[:page])
   end
 
   def update
