@@ -5,21 +5,22 @@
 	@extend %wrap-centered;
 }
 .user-nav__item{
-	display: inline-block;
-	padding: $base-unit;
-	float: left;
-	text-transform: uppercase;
-	font-size: $milli-size;
-	color: $purple;
-	font-weight: 500;
 	border-right: 1px solid $light-gray;
+	color: $purple;
+    display: inline-block;
+	float: left;
+	font-size: $milli-size;
+	font-weight: 500;
+	padding: $base-unit;
+	text-transform: uppercase; 
+
 	&:first-child{
 		border-left: 1px solid $light-gray;
 	}
 
 	&.-logo{
-		width: 210px;
 		background: $purple url('http://podemos.info/wordpress/wp-content/themes/podemos/images/header/podemos-logo.png') center no-repeat;
+		width: 210px;
 	}
 }
 

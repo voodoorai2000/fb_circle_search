@@ -1,15 +1,15 @@
 .pagination {
-	margin-top: $base-unit;
 	margin-bottom: $base-unit;
+	margin-top: $base-unit;
 	> span {
-		display: inline-block;
-		font-size: $milli-size; 
 		color: $gray;
+        display: inline-block;
+		font-size: $milli-size;
 		> a {
-			padding: 0 $base-unit / 2;
-			display: block;
-			font-size: inherit; 
 			color: inherit;
+			display: block;
+			font-size: inherit;
+			padding: 0 $base-unit / 2;
 			&:hover{
 				background: $light-gray;
 			}
@@ -18,9 +18,9 @@
 		/* Different States of items [current, prev, gap]*/
 
 		&.current{
-			padding: 0 $base-unit / 2;
 			color: $blue;
 			font-weight: 500;
+			padding: 0 $base-unit / 2;
 		}
 	}
 }
