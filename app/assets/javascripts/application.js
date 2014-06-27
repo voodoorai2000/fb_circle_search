@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require namespace
-//= require_directory ./partials
 //= require_tree .
