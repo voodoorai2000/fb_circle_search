@@ -8,7 +8,9 @@
     = csrf_meta_tags
     %link{href: "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel: "stylesheet"}/
   %body
-    .container{data: {section: params[:action]}}
-      = render "/shared/user_nav"
-      = yield
+    .wrap-container{data: {section: params[:action]}}
+      .header-top
+        = render "/shared/user_nav"
+      .container
+        = yield
 

@@ -1,7 +1,36 @@
+//*----------------------------------
+//*User nav | Main navigation on top of the page
+//*----------------------------------
 .user-nav{
-	padding: $base-unit;
-	border-bottom: 1px solid $mid-gray;
+	@extend %wrap-centered;
 }
 .user-nav__item{
-	margin-right: $base-unit;
+	display: inline-block;
+	padding: $base-unit;
+	float: left;
+	text-transform: uppercase;
+	font-size: $milli-size;
+	color: $purple;
+	font-weight: 500;
+	border-right: 1px solid $light-gray;
+	&:first-child{
+		border-left: 1px solid $light-gray;
+	}
+
+	&.-logo{
+		width: 210px;
+		background: $purple url('http://podemos.info/wordpress/wp-content/themes/podemos/images/header/podemos-logo.png') center no-repeat;
+	}
+}
+
+// States of active
+[data-section="index"]{
+	.user-nav__item:nth-child(3){
+		background: $light-gray;
+	}
+}
+[data-section="revised"]{
+	.user-nav__item:nth-child(2){
+		background: $light-gray;
+	}
 }

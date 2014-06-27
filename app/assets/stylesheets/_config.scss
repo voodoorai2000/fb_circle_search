@@ -12,6 +12,13 @@ $base-unit: 1em;
 $base-font-size: 14px;
 $base-line-height: 18px;
 
+//*----------------------------------------
+// Demo container settings
+//*----------------------------------------
+
+$container-width: 88%;
+$container-max-width: 45em;
+
 //*-----------------------------------------------
 //* Colors
 //*-----------------------------------------------
@@ -30,7 +37,7 @@ $light-green: #97c2b8;
 $light-gray: #eee;
 $gray: #333333;
 $mid-gray: #AEA79F;
-$dark-gray: #333;
+$dark-gray: #2C2F36;
 
 $blue: #0096cc;
 
