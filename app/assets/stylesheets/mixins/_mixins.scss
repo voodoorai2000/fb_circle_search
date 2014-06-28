@@ -1,8 +1,8 @@
 %wrap-centered{
-	max-width: $container-max-width;
-    width: $container-width;
     margin-left: auto;
     margin-right: auto;
+	max-width: $container-max-width;
+    width: $container-width;
 }
 
 @mixin font-size($font-size, $line-height:true){

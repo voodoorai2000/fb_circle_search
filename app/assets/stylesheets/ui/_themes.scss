@@ -1,0 +1,80 @@
+//*-----------------------------------------------
+//* Themes relatives UI 
+//*-----------------------------------------------
+
+.thm--pagination-aside{
+	.pagination{
+	  > span {
+	  	  display: none;
+	  }
+	  .next, .prev{
+	  	position: relative;
+	  	display: block;
+	  	width: 100px; line-height: 200px;
+	  	position: fixed;
+	  	display: block;
+	  	font-size: 3em;
+	  	text-indent: -99999em;
+	  	> a{
+	  		&:after{
+	  		position: absolute;
+	  		top: 50px;;
+	  		z-index: -1;
+	  		display: block;
+	  		content: '';
+	  		border-top: 50px solid transparent;
+	  	    border-bottom: 50px solid transparent;
+	  		}
+	  		&:hover{
+	  			background: none;
+	  		}
+	  	}
+
+	  }
+	  .next{
+	  	top: 50%;
+	  	right: 0;
+	  	> a{
+	  		&:after{
+	  	      border-left: 50px solid $light-gray;
+	  	      border-right: 50px solid trasparent;
+	  		}
+	  		// States
+	  		&:hover {
+	  			&:after{
+	  			  border-left-color: $mid-gray;
+	  		    } 
+	  		}
+	  		&:active{
+	  			&:after{
+	  				right: 20px;
+	  			}
+	  		}
+	  	}
+
+	  	
+	  }
+	  .prev{
+	  	top: 50%;
+	  	left: 0;
+	  	> a{
+	  		&:after{
+	  		  border-left: 50px solid transparent;
+	  	      border-right: 50px solid $light-gray;
+	  	    }
+	  	    // States
+	  	    &:hover {
+	  			&:after{
+	  			  border-right-color: $mid-gray;
+	  		    } 
+	  		}
+	  		&:active{
+	  			&:after{
+	  				left: 20px;
+	  			}
+	  		}
+	  	}
+	
+	  }
+    }
+}

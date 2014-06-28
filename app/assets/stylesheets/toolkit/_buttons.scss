@@ -1,19 +1,19 @@
 // Buttons
 
 .button {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
   font-family: inherit;
   font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  -webkit-appearance: none;
-  appearance: none;
-  white-space: nowrap;
-  display: inline-block;
-  line-height: 2rem;
   height: auto;
+  line-height: 2rem;
   min-height: 2rem;
   padding: .5rem 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  appearance: none;
 
   // Add optional FF hack
 }
