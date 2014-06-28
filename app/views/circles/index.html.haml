@@ -6,3 +6,5 @@
       = @circles.count
 = render 'circles', { circles: @circles, title: "Revisados" }
 = paginate @circles
+.wrap-pagination.thm--pagination-aside
+  = paginate @circles
