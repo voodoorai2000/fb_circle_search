@@ -1,7 +1,7 @@
 %table.table.mt2
   %thead
     %tr
-      %th Imagen
+      %th 
       %th Nombre
       %th Fecha
       %th Tipo
@@ -11,7 +11,7 @@
     - circles.each do |circle|
       %tr
         %td
-          = image_tag circle.image_url, size: '200x100'
+          = image_tag 'group_default.png', size: '80x80'
         %td
           = link_to circle.name, facebook_circle_url(circle)
         %td
