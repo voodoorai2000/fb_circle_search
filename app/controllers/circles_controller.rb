@@ -1,6 +1,10 @@
 class CirclesController < ApplicationController
   def index
-    @circles = Circle.recent.page(params[:page])
+    @circles = Circle.all.page(params[:page])
+  end
+
+  def recent
+    @circles = Circle.recent(48.hours.ago)
   end
 
   def revised
