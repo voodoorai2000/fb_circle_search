@@ -9,10 +9,13 @@ ready = ->
 
 # JS to check whether a circle has been visited
 $(document).on 'click', '.js-circle-visited', (e)->
-  $(@)
+  $this = $(@)
+  $this
   .closest('tr')
+  .fadeToggle 1200
   .find('td:not(:last-child)')
   .toggleClass 'status-visited'
+
 
 $(document).ready(ready)
   
