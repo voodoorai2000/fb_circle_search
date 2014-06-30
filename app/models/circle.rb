@@ -1,5 +1,5 @@
 class Circle < ActiveRecord::Base
-  default_scope { order('constituted_at DESC') }
+  default_scope { order('constituted_at IS NULL, constituted_at DESC') }
 
   scope :recent,   lambda { |time_ago| where("constituted_at > ?", time_ago) }
   scope :revised,  -> { where revised: true  }
