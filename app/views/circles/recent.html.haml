@@ -1,0 +1,7 @@
+.row.mt2
+  %h2 
+    Círculos últimas 48 horas 
+    %small
+      %i.fa.fa-check-square-o
+      = @circles.count
+  = render 'circles', { circles: @circles, title: "Últimas 48 horas" }

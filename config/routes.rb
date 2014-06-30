@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   resources :circles, only: [:index, :update] do
     collection do
+      get 'recent',    to: 'circles#recent'
       get 'revised',   to: 'circles#revised'
       get 'by_andrex', to: 'circles#by_andrex'
     end
   end
 
-  root 'circles#index'
+  root 'circles#recent'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

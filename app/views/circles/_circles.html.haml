@@ -5,7 +5,8 @@
       %th Nombre
       %th Fecha
       %th Tipo
-      %th Revisado
+      / if admin
+      / %th Revisado
       %th{colspan: "3"}
   %tbody
     - circles.each do |circle|
@@ -18,6 +19,7 @@
           = circle.constituted_at ? "Hace #{time_ago_in_words(circle.constituted_at)}" : "Desconocido"
         %td
           = t("text.#{circle.kind}")
-        %td.txt-center 
-          = form_for circle, remote: true, method: :put do |f|
-            = f.check_box :revised, {class: 'js-circle-visited'}
+        / if admin
+        / %td.txt-center 
+        /   = form_for circle, remote: true, method: :put do |f|
+        /     = f.check_box :revised, {class: 'js-circle-visited'}

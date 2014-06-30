@@ -1,9 +1,9 @@
 .row.mt2
   %h2
-    Círculos nuevos
+    Círculos 
     %small.status-info
       %i.fa.fa-child 
-      = @circles.count
+      = Circle.count
 = render 'circles', { circles: @circles, title: "Revisados" }
 = paginate @circles
 .wrap-pagination.thm--pagination-aside
