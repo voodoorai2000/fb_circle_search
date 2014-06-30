@@ -1,9 +1,6 @@
 .user-nav
   %a.user-nav__item.-logo.hide-text
     Podemos
-  %a.user-nav__item{href: revised_circles_url}
-    /%i.fa.fa-check-square-o
-    Ver círculos revisados
   %a.user-nav__item{href: recent_circles_url}
     /%i.fa.fa-child
     Últimas 48 horas
@@ -11,3 +8,7 @@
     /%i.fa.fa-child
     Ver todos
   
+  / if admin
+  / %a.user-nav__item{href: revised_circles_url}
+  / %i.fa.fa-check-square-o
+  / Ver círculos revisados
